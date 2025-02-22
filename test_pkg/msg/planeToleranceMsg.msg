@@ -1,0 +1,11 @@
+string cam_topic_name
+string info_error
+float64 height_delta
+geometry_msgs/Quaternion R
+float64 plane_tolerance
+float64 defect_location
+float64[] defect_location_x
+float64[] defect_location_y
+float64 measure_num
+Header header
+bool mode

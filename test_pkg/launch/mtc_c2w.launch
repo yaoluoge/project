@@ -1,0 +1,15 @@
+<launch>
+    <node name = "flatness_detect" pkg = "flatness_detect" type = "PEC" output = "screen" >
+        <param name = "cloud_topic" type = "string" value = "/D435i_1/depth/color/points" />
+        <param name = "x_GT" type = "double" value = "-0.10" />
+        <param name = "x_LT" type = "double" value = "0.15" />
+        <param name = "y_GT" type = "double" value = "-0.025" />
+        <param name = "y_LT" type = "double" value = "-0.005" />
+        <param name = "z_GT" type = "double" value = "-0.3" />
+        <param name = "z_LT" type = "double" value = "0.3" />
+        <param name = "max_iteration" type = "int" value = "100" />
+        <param name = "fitting_mathod_LSFP" type = "bool" value = "true" />
+    </node>
+
+   
+</launch>    

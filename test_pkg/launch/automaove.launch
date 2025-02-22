@@ -1,0 +1,42 @@
+<launch>
+
+	<arg name="rviz" default="true" />
+
+    <node name = "flatness_detect" pkg = "flatness_detect" type = "automove" output = "screen">
+        <param name = "cloud_topic_1" type = "string" value = "/D435i_1/depth/color/points" /><!--/camera/depth/color/points-->
+        <param name = "cloud_topic_2" type = "string" value = "/D435i_2/depth/color/points" />
+        <param name = "cloud_topic_3" type = "string" value = "/D435i_3/depth/color/points" />
+        <param name = "cloud_topic_4" type = "string" value = "/D435i_4/depth/color/points" />
+        <param name = "x_GT" type = "double" value = "-0.101" />
+        <param name = "x_LT" type = "double" value = "0.151" />
+        <param name = "y_GT" type = "double" value = "0.005" />
+        <param name = "y_LT" type = "double" value = "0.025" />
+        <param name = "z_GT" type = "double" value = "-0.3" />
+        <param name = "z_LT" type = "double" value = "0.3" />
+        <param name = "detect_interval" type = "double" value = "0.5" /><!-- 检测作业间隔 -->
+        <param name = "slip_compensation" type = "double" value = "0.0" /><!-- 打滑距离补偿 -->
+        <param name = "ransac_distancethreshold" type = "double" value = "0.0003" /><!-- ransac 拟合平面内点距离阈值 -->
+        <param name = "ransac_maxiterations" type = "int" value = "3000" /><!-- ransac 拟合平面最大迭代次数 -->
+        <param name = "ransac_probability" type = "double" value = "0.995" /><!-- ransac 参数 -->
+        <param name = "distance_threshold" type = "double" value = "0.0055" /><!-- 备用参数，未使用 -->
+        <param name = "cloud_filtered_width" type = "int" value = "6000" /><!-- 体素滤波降采样点最大数量 -->
+        <param name = "kdtree_neighbor_num" type = "int" value = "15" /><!-- 判断离群点时周围点的采样数量 -->
+        <param name = "kdtree_filter_dis" type = "double" value = "0.0004" /><!-- 判断条件 -->
+        <param name = "kdtree_filter_num" type = "int" value = "8" /><!-- 判断条件 -->
+        <param name = "using_MBB" type = "bool" value = "false" /><!-- 1：使用包围盒检测平整度，2. 使用暴力搜索检测 -->
+        <param name = "mean_step" type = "int" value = "10" /><!-- 平均采样的步长 -->
+
+        <param name = "flat_max" type = "double" value = "0.003"/><!--超出该值认为平整度不达标，单位mm-->
+
+        <param name = "fixed_length_detection" type = "int" value = "10" /><!-- 定长检测测距 -->
+
+        <rosparam command="load" file="$(find flatness_detect)/config/test1.yaml" />
+    </node>
+
+	<!-- <group if="$(arg rviz)">
+	<node name = "flat_rviz" pkg = "rviz" type = "rviz" args="-d $(find flatness_detect)/launch/display.rviz" />
+	</group> -->
+    
+
+
+</launch>    

@@ -1,0 +1,55 @@
+weld_detection1/
+|-- CMakeLists.txt (主目录)
+|-- dep/LogOutput/
+|   |-- CMakeLists.txt (子目录)
+|   |-- dataout/
+|   |   |-- CMakeLists.txt (子目录)
+|   |   |-- app/
+|   |   |   |-- CMakeLists.txt (子目录)
+|   |   |   |-- appconfig.cpp
+|   |   |   `-- appconfig.h
+|   |   |-- form/
+|   |   |   |-- CMakeLists.txt (子目录)
+|   |   |   |-- frmdatacsv.h
+|   |   |   |-- frmdataother.h
+|   |   |   |-- frmdataout1.h
+|   |   |   |-- frmdataout2.h
+|   |   |   |-- frmdataout3.h
+|   |   |   |-- frmdatareport.h
+|   |   |   |-- frmdatathread.h
+|   |   |   |-- frmmain.h
+|   |   |   |-- frmsimple.h
+|   |   |   |-- frmdatacsv.cpp
+|   |   |   |-- frmdataother.cpp
+|   |   |   |-- frmdataout1.cpp
+|   |   |   |-- frmdataout2.cpp
+|   |   |   |-- frmdataout3.cpp
+|   |   |   |-- frmdatareport.cpp
+|   |   |   |-- frmdatathread.cpp
+|   |   |   |-- frmmain.cpp
+|   |   |   |-- 其余略
+|   |   |   `-- frmsimple.cpp
+|   |   `-- head.h
+|   |-- core_dataout/
+|   |   |-- CMakeLists.txt (子目录)
+|   |   |-- datacsv.h
+|   |   |-- datahead.h
+|   |   |-- dataother.h
+|   |   |-- datacsv.cpp
+|   |   |-- datahead.cpp
+|   |   |-- 其余略
+|   |   `-- dataother.cpp
+|   |-- core_base/
+|   |   |-- CMakeLists.txt (子目录)
+|   |   |-- appdata.h
+|   |   |-- appinit.h
+|   |   |-- quihelper.h
+|   |   |-- appdata.cpp
+|   |   |-- appinit.cpp
+|   |   |-- 其余略
+|   |   `-- quihelper.cpp
+|   |-- include/
+|   |   `-- head.h
+|   `-- folder_struct.txt
+`-- 其余略
+

@@ -1,0 +1,19 @@
+<launch>
+    <node pkg="flatness_detect" type="main_window" name="main_window" output="screen" launch-prefix="gdb -ex run --args">
+        <param name="icon_predfix_name" value="plane_tolerance_frame_"/>
+        <param name="base_path" value="$(find flatness_detect)/log/"/>
+        <param name="folder" value="cloud_point_data"/>
+        <param name="folder_pdf" value="pdf"/>
+        <param name="folder_temp" value="temp"/>
+        <param name="cloud_points_topic" value="/flatness_detect/out_fit_input"/>
+        <param name="current_task_image_folder" value="平面度检测"/>
+        <param name="height_R_topic" value="/flatness_detect/height_delta_R"/>
+        <param name= "flat_max" type = "double" value = "3"/>
+        <param name= "flat_normal" type = "double" value = "3"/>
+        <param name= "is_state_test" type = "bool" value = "true"/>
+        <!-- <param name="csv_path" value="$(find flatness_detect)/log/"/> -->
+        <!--超出该值认为平整度不达标，单位mm-->
+        <param name="plane_tolerance_topic" value="/flatness_detect/plane_tolerance"/>
+    </node>
+</launch>
+
